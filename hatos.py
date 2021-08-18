@@ -3,13 +3,13 @@
 import kozos
 
 # A következő mezők kitöltése kötelező:
-link = "https://bet.szerencsejatek.hu/cmsfiles/otos.csv"
-column_numbers = 11,16
-max_num = 90
+link = "https://bet.szerencsejatek.hu/cmsfiles/hatos.csv"
+column_numbers = 13,19
+max_num = 45
 #-------------------------------------
-print("***** ÖTÖS LOTTO *****")
-kozos.downloadDataToFile(link,"otos.csv")
-data = kozos.loadDataFromFile("otos.csv")
+print("***** HATOS LOTTO *****")
+kozos.downloadDataToFile(link,"hatos.csv")
+data = kozos.loadDataFromFile("hatos.csv")
 print("Adatszerkezet:")
 print(data[0])
 print("A számok:")
