@@ -31,7 +31,6 @@ def createStatistic(data,column_numbers,max_num):
     for line in data:
         num_list = line[column_numbers[0]: column_numbers[1]]
         num_list = list(map(int,num_list))
-        
         for index in range(num_count):
             act_num = num_list[index]
             statistic[index][act_num]= statistic[index][act_num]+1
@@ -45,3 +44,6 @@ def printStatistic(statistic, max_num):
         for c in range(len(statistic)):
             print(f"{statistic[c][r]:3}", end=' ')
         print()
+
+def szazalek(alap, ertek):
+    print(f"{alap}/{ertek} - {ertek/alap*100:3.2}%")
