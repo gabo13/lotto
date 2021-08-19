@@ -46,4 +46,4 @@ def printStatistic(statistic, max_num):
         print()
 
 def szazalek(alap, ertek):
-    print(f"{alap}/{ertek} - {ertek/alap*100:3.2}%")
+    print(f"{alap}/{ertek} - {ertek/alap*100:3}%")
