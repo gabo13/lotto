@@ -2,12 +2,13 @@
 
 from urllib.request import urlopen
 
-
 def downloadDataToFile(url, filename):
     """Download url and save to file"""
-
-    with open(filename,'wb') as f:
-        f.write(urlopen(url).read())
+    answer = input("Letölti a fájlt? Y/N: ").upper()
+    if answer == "Y":
+        print(f"Download {filename} ...")
+        with open(filename,'wb') as f:
+            f.write(urlopen(url).read())
 
 
 def loadDataFromFile(filename):
@@ -40,9 +41,9 @@ def createStatistic(data,column_numbers,max_num):
 
 def printStatistic(statistic, max_num):
     for r in range(max_num+1):
-        print(f"{r:3}) ", end='')
+        print(f"{r:3}> ", end='')
         for c in range(len(statistic)):
-            print(f"{statistic[c][r]:3}", end=' ')
+            print(f"{statistic[c][r]:>4}|", end=' ')
         print()
 
 def szazalek(alap, ertek):
