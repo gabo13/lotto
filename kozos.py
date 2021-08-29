@@ -40,6 +40,7 @@ def createStatistic(data,column_numbers,max_num):
 
 
 def printStatistic(statistic, max_num):
+    print("Statisztika:")
     for r in range(max_num+1):
         print(f"{r:3}> ", end='')
         for c in range(len(statistic)):
@@ -50,8 +51,16 @@ def szazalek(alap, ertek):
     print(f"{alap}/{ertek} - {ertek/alap*100:3}%")
 
 def talalat(iterable1, iterable2):
-	s1=set(iterable1)
-	s2=set(iterable2)
-	return s1.intersection(s2)
-	
- 
+    s1=set(iterable1)
+    s2=set(iterable2)
+    return s1.intersection(s2)
+
+def getSubList(l, s, e):
+    return l[s:e]
+
+def load_szelveny(filename):
+    l = []
+    with open(filename,"rt") as f:
+        for line in f:
+            l.append(line.strip().split(" "))
+    return l
