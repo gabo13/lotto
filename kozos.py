@@ -60,7 +60,30 @@ def getSubList(l, s, e):
 
 def load_szelveny(filename):
     l = []
+    print("Szelvény: ")
     with open(filename,"rt") as f:
         for line in f:
-            l.append(line.strip().split(" "))
+            szamok = line.strip().split(" ")
+            l.append(szamok)
+            print(*szamok)
+    print("#"*20)
     return l
+
+def talalat2(huzas, data, numbers_func, min_talalat = 4):
+    """ huzas: szelvenyen szereplő számok
+        data: csv file data
+        numeric_func: numbers from csv file line
+        min_talalat: smalest hits
+    """
+    print("Húzás: ", *huzas)
+    stat = {}
+    for line in data:
+        szamok = numbers_func(line)
+        talalatok = talalat(szamok, huzas)
+        if len(talalatok) >= min_talalat:
+            print(*talalatok, "\tTalálat: ", len(talalatok))
+            try:
+                stat[len(talalatok)] = stat[len(talalatok)] +1
+            except KeyError as e:
+                stat[int(str(e))]=1
+    return stat
