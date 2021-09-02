@@ -75,13 +75,12 @@ def talalat2(huzas, data, numbers_func, min_talalat = 4):
         numeric_func: numbers from csv file line
         min_talalat: smalest hits
     """
-    print("Húzás: ", *huzas)
-    stat = {}
+    stat = {4:0, 5:0, 6:0, 7:0}
     for line in data:
         szamok = numbers_func(line)
         talalatok = talalat(szamok, huzas)
         if len(talalatok) >= min_talalat:
-            print(*talalatok, "\tTalálat: ", len(talalatok))
+            #print(*talalatok, "\tTalálat: ", len(talalatok))
             try:
                 stat[len(talalatok)] = stat[len(talalatok)] +1
             except KeyError as e:
