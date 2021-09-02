@@ -38,15 +38,8 @@ def nums1(size=3):
             for i  in range(pv+1,0): # pv to list[-1]
                 l[i] = 0
             pv =-1
-        
-            
-            
-            
-            
-            
-    
-    
-    
+
+
 if __name__ == "__main__":
     for l in nums1(2):
         print(l, sep ='')
