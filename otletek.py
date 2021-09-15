@@ -24,6 +24,7 @@ def nums1(size=3):
     l = [0]*size
     pv=-1 #place value (reverse index)
     while pv > -(size):
+        print(l)
         yield l
         #print("pv:",pv)
         if l[pv] < 9:
@@ -48,7 +49,7 @@ def nums1(size=3):
     
     
 if __name__ == "__main__":
-    for l in nums1(2):
-        print(l, sep ='')
+    #for l in nums1(2):
+        #print(l, sep ='')
     la = [l for l in nums1(3)]
     print("la: ",*la)
