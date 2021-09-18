@@ -23,8 +23,13 @@ def nums1(size=2):
     l = [0]*size
     pv=-1 #place value (reverse index)
     while pv > -(size):
+<<<<<<< HEAD
+        print(l)
+        yield l
+=======
         
         yield l.copy()
+>>>>>>> 212fe33a4a5125628980a1d50c0b8a306a7cefbb
         #print("pv:",pv)
         if l[pv] < 9:
             l[pv] += 1
@@ -76,5 +81,25 @@ if __name__ == "__main__":
     
     lista = list(range(3))
     print(lista)
+<<<<<<< HEAD
     for i in nums2(3,list("cba")):
         print("".join(i))
+=======
+    la = [l for l in nums2(3,list('abcdefghijklmnopqrstuvwxyz0123456789'))]
+    print("la: ",*la)
+    print(sof(la)/1024, 'kb')
+    '''
+    for i in nums2(7,lista):
+    	print(*i)
+    '''
+    
+    
+<<<<<<< HEAD
+if __name__ == "__main__":
+    #for l in nums1(2):
+        #print(l, sep ='')
+    la = [l for l in nums1(3)]
+    print("la: ",*la)
+=======
+>>>>>>> 212fe33a4a5125628980a1d50c0b8a306a7cefbb
+>>>>>>> 0750d11eccd707b04a3d9bb867efe705a2c53ed6

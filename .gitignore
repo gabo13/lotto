@@ -1,0 +1,6 @@
+*.out
+*.pyc
+*.csv
+*.txt
+__pxcache__
+
