@@ -74,14 +74,7 @@ def nums2(size =2, tokens=None):
 
 if __name__ == "__main__":
     
-    lista = list(range(2))
+    lista = list(range(3))
     print(lista)
-    la = [l for l in nums2(3,list('abcdefghijklmnopqrstuvwxyz0123456789'))]
-    print("la: ",*la)
-    print(sof(la)/1024, 'kb')
-    '''
-    for i in nums2(7,lista):
-    	print(*i)
-    '''
-    
-    
+    for i in nums2(3,list("cba")):
+        print("".join(i))
