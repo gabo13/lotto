@@ -3,7 +3,12 @@
 from urllib.request import urlopen
 
 def downloadDataToFile(url, filename):
-    """Download url and save to file"""
+    """
+    Download url and save to file
+    url:
+    filename: filename to save data
+    """
+    
     answer = input("Letölti a fájlt? Y/N: ").upper()
     if answer == "Y":
         print(f"Download {filename} ...")
@@ -12,6 +17,10 @@ def downloadDataToFile(url, filename):
 
 
 def loadDataFromFile(filename):
+    """
+    Load  data from file
+    filename: open csv file and create list
+    """
     data = []
     with open(filename,'rt') as f:
         for line in f:
@@ -21,11 +30,15 @@ def loadDataFromFile(filename):
 
 
 def createStatistic(data,column_numbers,max_num):
-    """Return list"""
+    """
+    Generate statistic from data
+    data: 2 dimensional list
+    column_numbers: 2 integer in tuple, first column and last column+1
+    max_num: largest number in numbers
+    """
     num_count = column_numbers[1]-column_numbers[0] # Hány kiirandó szám van?
 
     statistic = [] # A visszaadandó táblázat
-    #Feltöltünk num_count számú tömböt
     for i in range(num_count+1):
         statistic.append([0]*(max_num+1))
 
@@ -51,14 +64,23 @@ def szazalek(alap, ertek):
     print(f"{alap}/{ertek} - {ertek/alap*100:3}%")
 
 def talalat(iterable1, iterable2):
+    """
+    Return 2 iterables intersection
+    """
     s1=set(iterable1)
     s2=set(iterable2)
     return s1.intersection(s2)
 
 def getSubList(l, s, e):
+    """
+    Return l iterable sublist
+    """
     return l[s:e]
 
 def load_szelveny(filename):
+    """
+    Load 2 dimensional list from lotto ticket
+    """
     l = []
     print("Szelvény: ")
     with open(filename,"rt") as f:
@@ -66,11 +88,10 @@ def load_szelveny(filename):
             szamok = line.strip().split(" ")
             l.append(szamok)
             print(*szamok)
-    print("#"*20)
     return l
 
 def talalat2(huzas, data, numbers_func, min_talalat = 4):
-    """ huzas: szelvenyen szereplő számok
+    """ huzas: numbers from lotto ticket
         data: csv file data
         numeric_func: numbers from csv file line
         min_talalat: smalest hits

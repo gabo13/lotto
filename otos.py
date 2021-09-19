@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 import kozos
 
 # A következő mezők kitöltése kötelező:
