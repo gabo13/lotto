@@ -2,5 +2,5 @@
 *.pyc
 *.csv
 *.txt
-__pxcache__
+__pycache__
 
